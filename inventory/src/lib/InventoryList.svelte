@@ -39,7 +39,7 @@
 </script>
 
 <input type="search" bind:value={search}  placeholder="Search.." />
-<SvelteTable classNameRowExpanded="row-expanded" classNameExpandedContent="expanded-content" expandRowKey="_id" showExpandIcon="{true}" expandSingle="{true}" columns="{columns}" rows="{typeof search == "undefined" ? items : searchResults}">
+<SvelteTable columns="{columns}" rows="{typeof search == "undefined" ? items : searchResults}">
     <svelte:fragment slot="expanded" let:row>{row.description}</svelte:fragment>
 </SvelteTable>
 
@@ -50,23 +50,5 @@ input[type='search']{
     padding: 5px;
     margin-bottom: 40px;
 }
-
-:global(tr:not(.expanded-content) td){
-    padding: 5px 0;
-}
-
-:global(tr:not(.expanded-content):nth-child(2n)){
-    background-color: #ededed;
-}
-
-:global(.expanded-content){
-    height: 100px;
-    text-align: left;
-}
-
-:global(tbody tr.row-expanded){
-    background-color: #c7c7c7;  /* fiks denne */
-}
-
 </style>
 
