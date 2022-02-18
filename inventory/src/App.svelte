@@ -42,6 +42,7 @@
   header > span{
     display: flex;
     justify-content: center;
+    margin-left: 75px;
   }
 
   header > span button{

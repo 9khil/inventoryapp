@@ -44,5 +44,6 @@ Example data for POST:
 {
     "name": "ESP8266 Wemos D1 dev board",
     "description": "Wemos D1 dev board. Micro USB, 3.3v and 5v"
-    "inStock": true 
+    "inStock": true,
+    "location": {} 
 }

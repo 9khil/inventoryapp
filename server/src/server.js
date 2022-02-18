@@ -23,7 +23,8 @@ const Schema = mongoose.Schema;
 const inventorySchema = new Schema({
     name: String,
     description: String,
-    inStock: Boolean
+    inStock: Boolean,
+    location: Object
 });
 const Item = mongoose.model('Item', inventorySchema);
 
