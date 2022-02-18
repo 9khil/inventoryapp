@@ -6,7 +6,6 @@
     for (let field of formData) {
         const [key, value] = field;
         data[key] = value;    
-        
     }
     await fetch('http://localhost:4000/api/inventory/',{
         method:'POST',
@@ -27,17 +26,16 @@
         <div class="form-group">
             <input
                 type="text"
-                id="name"
                 name="name"
-                placeholder="Item name"
+                placeholder="Name"
+                required
             />
         </div>
-        <div class="form-group">
-            <textarea
-                id="description"
+        <div class="form-group description">
+            <input
+                type="text"
                 name="description"
-                placeholder="Item description"
-                cols="30"
+                placeholder="Description"
             />
         </div>
         <div class="form-group">
@@ -48,27 +46,25 @@
 
 <style>
 .form-container {
-    width: 80%;
+    width: 500px;
     margin: 10px auto;
 }
 
 form {
-    display: flex;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 180px 250px 50px;
+    column-gap: 10px;
+}
+
+form .form-group{
+    
+}
+
+.form-group input{
+    margin: 0;
+    padding: 5px;
+    box-sizing: border-box;
     width: 100%;
-}
-
-.form-group {
-    margin: 10px;
-    width: 30%;
-}
-
-.form-group input[type="text"] {
-    padding: 10px;
-}
-
-.form-group textarea {
-    padding: 10px;
 }
 
 button {

@@ -1,8 +1,32 @@
 <script>
     import { onMount } from "svelte";
-    import Item from "./Item.svelte";
+    import SvelteTable from "svelte-table"
 
+    import Item from "./Item.svelte";
+    
     let items = []; 
+    let search = undefined;
+
+    $: searchResults = search ?
+		items.filter(item => {
+			return (item.name).toLowerCase().match(`${search}.*`) || item.description.toLowerCase().match(`${search}.*`)
+		}) : items;
+
+
+    const columns = [
+        {
+            key: "name",
+            title: "Item",
+            value: v => v.name,
+            sortable: true,
+        },
+        {
+            key: "description",
+            title: "Description",
+            value: v => v.description,
+            sortable: false
+        }
+    ]
 
     onMount(async () => {
         await fetch(`http://localhost:4000/api/inventory/`)
@@ -13,46 +37,10 @@
     });
 
 </script>
+<input type="search" bind:value={search}  placeholder="Search" />
 
-{ #if items }
-{ #each items as item }
-<ul>
-    <li>
-        <Item {item} />
-    </li>
-</ul>
-{/each}
-{:else }
-<p class="loading">Fetching inventory..</p>
-{ /if}
-
+<SvelteTable columns="{columns}" rows="{typeof search == "undefined" ? items : searchResults}"></SvelteTable>
 
 <style>
-ul {
-    width: 80%;
-    margin: 10px auto;
-    list-style-type: none;
-    padding: 0px;
-}
-
-li {
-    display: block
-}
-
-.loading {
-    opacity: 0;
-    animation: 0.5s 0.6s forwards fade-in;
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
 </style>
 

@@ -1,17 +1,27 @@
 <script>
-  import logo from './assets/svelte.png'
-  import Search from './lib/Search.svelte'
+  import logo from './assets/labben.png'
   import InventoryList from './lib/InventoryList.svelte'
   import AddItem from './lib/AddItem.svelte'
+  import Fa from 'svelte-fa';
+  import { faPlus } from '@fortawesome/free-solid-svg-icons';
+  
+  let showAddItem = false;
+
 </script>
 
-<main>
-  <img src={logo} alt="Svelte Logo" />
-  <h1>Inventory</h1>
+<header>
+  <span>
+    <h1>Inventory</h1>
+    <button on:click={() => showAddItem = !showAddItem}><Fa class="add-icon" icon={faPlus}/> Add item</button>
+  </span>
+  <img src={logo} alt="Logo" />
+</header>
 
-  <AddItem/>
-  
-  <Search/>
+<main>
+
+  {#if showAddItem}
+    <AddItem/>
+  {/if}
 
   <InventoryList/>
   
@@ -19,8 +29,29 @@
 
 <style>
   :root {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+
+  header{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 75px;
+    height: 75px;
+  }
+  
+  header > span{
+    display: flex;
+    justify-content: center;
+  }
+
+  header > span button{
+    height: 38px;
+    margin: 16px 0 0 16px;
+  }
+
+  header img{
+    height: 60px;
+    text-align: right;
   }
 
   main {
@@ -28,35 +59,12 @@
     padding: 1em;
     margin: 0 auto;
   }
-
-  img {
-    height: 16rem;
-    width: 16rem;
-  }
-
   h1 {
-    color: #ff3e00;
     text-transform: uppercase;
-    font-size: 4rem;
+    font-size: 40px;
     font-weight: 100;
-    line-height: 1.1;
-    margin: 2rem auto;
-    max-width: 14rem;
+    line-height: 75px;
+    margin: 0;
   }
 
-  p {
-    max-width: 14rem;
-    margin: 1rem auto;
-    line-height: 1.35;
-  }
-
-  @media (min-width: 480px) {
-    h1 {
-      max-width: none;
-    }
-
-    p {
-      max-width: none;
-    }
-  }
 </style>

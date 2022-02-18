@@ -6,6 +6,8 @@ Nikhil lærer seg Svelte..
 
 ## Todo
 
+- Funksjonalitet for å lagre plassering av item (vise på kart/planløsning)
+- SASS
 - PUT for å oppdatere
 - Ikke skriv norsk og engelsk i README
 - Host et eller annet sted
