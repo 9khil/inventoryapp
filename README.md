@@ -1,8 +1,6 @@
 # inventoryapp
 simple inventory app
 
-## Todo
-
 ## Install
 
 Prereqs: mongodb, node 16+, 
