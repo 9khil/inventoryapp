@@ -44,11 +44,8 @@ app.post('/api/inventory', async (req, res, next) => {
 app.put('/api/inventory', async (req, res, next) => {
    try{
         const item = await Item.findOne({ _id: req.body._id });
-        item.name = req.body.name;
-        item.description = req.body.description;
         item.inStock = req.body.inStock;
-        item.location = req.body.location;
-
+        
         await item.save();
         res.send(item);
     } catch {
