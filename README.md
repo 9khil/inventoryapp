@@ -1,19 +1,7 @@
 # inventoryapp
 simple inventory app
 
-Nikhil lærer seg Svelte..
-
-
 ## Todo
-
-- Funksjonalitet for å lagre plassering av item (vise på kart/planløsning)
-- SASS
-- PUT for å oppdatere
-- Ikke skriv norsk og engelsk i README
-- Host et eller annet sted
-- Bak SSO/Kun tilgjengelig fra labben?
-
-
 
 ## Install
 
@@ -45,5 +33,5 @@ Example data for POST:
     "name": "ESP8266 Wemos D1 dev board",
     "description": "Wemos D1 dev board. Micro USB, 3.3v and 5v"
     "inStock": true,
-    "location": {} 
+    "location": 12
 }

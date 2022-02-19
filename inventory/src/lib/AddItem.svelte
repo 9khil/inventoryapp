@@ -39,6 +39,13 @@
             />
         </div>
         <div class="form-group">
+            <input
+                type="number"
+                name="location"
+                placeholder="Location"
+            />
+        </div>
+        <div class="form-group">
             <button type="submit">Add</button>
         </div>
     </form>
@@ -52,7 +59,7 @@
 
 form {
     display: grid;
-    grid-template-columns: 180px 250px 50px;
+    grid-template-columns: 180px 250px 80px 50px;
     column-gap: 10px;
 }
 

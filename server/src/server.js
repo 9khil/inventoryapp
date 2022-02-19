@@ -24,7 +24,7 @@ const inventorySchema = new Schema({
     name: String,
     description: String,
     inStock: Boolean,
-    location: Object
+    location: Number
 });
 const Item = mongoose.model('Item', inventorySchema);
 
@@ -39,6 +39,22 @@ app.post('/api/inventory', async (req, res, next) => {
     
     await item.save();
     return res.json(item);
+});
+
+app.put('/api/inventory', async (req, res, next) => {
+   try{
+        const item = await Item.findOne({ _id: req.body._id });
+        item.name = req.body.name;
+        item.description = req.body.description;
+        item.inStock = req.body.inStock;
+        item.location = req.body.location;
+
+        await item.save();
+        res.send(item);
+    } catch {
+        res.status(404);
+        res.send({ error: "Item does not exist" });
+    }
 });
 
 app.delete('/api/inventory', async (req, res, next) => {
