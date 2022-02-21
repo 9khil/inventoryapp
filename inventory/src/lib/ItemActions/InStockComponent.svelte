@@ -5,7 +5,6 @@
 
     export let row;
     export let onInStockToggle;
-    export let col;
 
     let inStock = false;
 
@@ -28,6 +27,10 @@
 </div>
 
 <style>
+    .instock-icons-container{
+        padding: 5px 10px;
+    }
+
     .instock :global(.box-icon){
         color: #14cd14;
     }

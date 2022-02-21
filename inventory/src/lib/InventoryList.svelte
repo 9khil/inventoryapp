@@ -3,7 +3,7 @@ import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icon
 
     import { onMount } from "svelte";
     import SvelteTable from "svelte-table"
-    import InStockComponent from "./InStockComponent.svelte";
+    import ItemActions from "./ItemActions.svelte";
     
     let items = []; 
     let search = undefined;
@@ -44,7 +44,7 @@ import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icon
         {
             key: "location",
             title: "Location",
-            value: v => typeof v.location != "undefined" ? v.location : "",
+            value: v => typeof v.location != "undefined" && v.location != null ? v.location : "",
             sortable: true
         },
         {
@@ -52,7 +52,7 @@ import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icon
             title: "",
             sortable: false,
             renderComponent: {
-                component: InStockComponent,
+                component: ItemActions,
                 props:  { onInStockToggle }
             }
         }
