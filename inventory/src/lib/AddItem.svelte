@@ -26,7 +26,7 @@
         <div class="form-group description">
             <input type="text" name="description" placeholder="Description" />
         </div>
-        <div class="form-group">
+        <div class="form-group location">
             <input type="number" name="location" placeholder="Location" />
         </div>
         <div class="form-group">
@@ -37,24 +37,22 @@
 
 <style>
     .form-container {
-        width: 500px;
+        width: 100%;
         margin: 10px auto 50px auto;
     }
-
-    form {
-        display: grid;
-        grid-template-columns: 180px 250px 80px 50px;
-        column-gap: 10px;
-    }
-
-    form .form-group {
-    }
-
     .form-group input {
-        margin: 0;
         padding: 5px;
         box-sizing: border-box;
         width: 100%;
+        height: 38px;
+        margin-bottom: 10px;
+    }
+
+    .form-group.location {
+        text-align: left;
+    }
+    .form-group.location input {
+        width: 80px;
     }
 
     button {
@@ -67,5 +65,23 @@
         font-weight: bold;
         padding: 5px 10px;
         text-transform: uppercase;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .form-container {
+            width: 500px;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 180px 250px 80px 50px;
+            column-gap: 10px;
+        }
+        .form-group input {
+            margin: 0;
+            padding: 5px;
+            box-sizing: border-box;
+            width: 100%;
+            height: 30px;
+        }
     }
 </style>
