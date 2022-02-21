@@ -13,7 +13,7 @@
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
     "svelte": "^3.44.0",
     "svelte-fa": "^2.4.0",
-    "vite": "^2.8.0",
-    "svelte-table": "^0.3.4"
+    "svelte-table": "^0.3.4",
+    "vite": "^2.8.0"
   }
 }

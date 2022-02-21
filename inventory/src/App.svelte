@@ -1,30 +1,32 @@
 <script>
-  import logo from './assets/labben.png'
-  import InventoryList from './lib/InventoryList.svelte'
-  import AddItem from './lib/AddItem.svelte'
+  import logo from './assets/labben.png';
+  import InventoryList from './lib/InventoryList.svelte';
   import Fa from 'svelte-fa';
   import { faPlus } from '@fortawesome/free-solid-svg-icons';
-  
+  import AddItem from './lib/AddItem.svelte';
+
   let showAddItem = false;
+
+  function toggleShowAddItem(){
+    showAddItem = !showAddItem;
+  }
 
 </script>
 
 <header>
   <span>
     <h1>Inventory</h1>
-    <button on:click={() => showAddItem = !showAddItem}><Fa class="add-icon" icon={faPlus}/> Add item</button>
+    <button on:click={toggleShowAddItem}><Fa class="add-icon" icon={faPlus}/> Add item</button>
   </span>
   <img src={logo} alt="Logo" />
 </header>
 
 <main>
-
   {#if showAddItem}
     <AddItem/>
   {/if}
 
   <InventoryList/>
-  
 </main>
 
 <style>

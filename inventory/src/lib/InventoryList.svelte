@@ -5,7 +5,6 @@ import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icon
     import SvelteTable from "svelte-table"
     import InStockComponent from "./InStockComponent.svelte";
     
-
     let items = []; 
     let search = undefined;
 
@@ -49,8 +48,8 @@ import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icon
             sortable: true
         },
         {
-            key: "instock",
-            title: "In stock",
+            key: "actions",
+            title: "",
             sortable: false,
             renderComponent: {
                 component: InStockComponent,

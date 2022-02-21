@@ -21,8 +21,9 @@ API should now be running. You can verify with Postman. Look further down in API
 
 ## API
 Same endpoint for all calls: /api/inventory
-Use methods GET, POST, DELETE
+Use methods GET, POST, PUT, DELETE
 
+PUT takes inventory object
 DELETE takes an ID.
 
 Example data for POST:
