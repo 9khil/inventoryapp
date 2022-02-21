@@ -1,20 +1,18 @@
 <script>
-    import InStockComponent from './ItemActions/InStockComponent.svelte';
-    import DeleteComponent from './ItemActions/DeleteComponent.svelte';
+    import InStockComponent from "./ItemActions/InStockComponent.svelte";
+    import DeleteComponent from "./ItemActions/DeleteComponent.svelte";
 
     export let row;
-    export let col;
-
     export let onInStockToggle;
 </script>
 
 <div class="item-actions-container">
-    <InStockComponent row={row} onInStockToggle={onInStockToggle}/>
-    <DeleteComponent row={row}/>
+    <InStockComponent {row} {onInStockToggle} />
+    <DeleteComponent {row} />
 </div>
 
 <style>
-    .item-actions-container{
+    .item-actions-container {
         display: grid;
         grid-template-columns: 35px 35px;
         width: 16px;

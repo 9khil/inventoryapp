@@ -36,16 +36,16 @@ app.get('/api/inventory', async (req, res, next) => {
 app.post('/api/inventory', async (req, res, next) => {
     const item = new Item(req.body);
     item.inStock = true;
-    
+
     await item.save();
     return res.json(item);
 });
 
 app.put('/api/inventory', async (req, res, next) => {
-   try{
+    try {
         const item = await Item.findOne({ _id: req.body._id });
         item.inStock = req.body.inStock;
-        
+
         await item.save();
         res.send(item);
     } catch {
@@ -56,7 +56,7 @@ app.put('/api/inventory', async (req, res, next) => {
 
 app.delete('/api/inventory', async (req, res, next) => {
     // find item by id and delete
-    await Item.findByIdAndDelete(req.body.id);                   
+    await Item.findByIdAndDelete(req.body.id);
 
     return res.json({
         message: 'Item deleted successfully',
