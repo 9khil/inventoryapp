@@ -17,6 +17,7 @@
     "vite": "^2.8.0"
   },
   "dependencies": {
-    "svelte-confirm": "^0.0.0"
+    "svelte-confirm": "^0.0.0",
+    "svelte-navigator": "^3.1.5"
   }
 }

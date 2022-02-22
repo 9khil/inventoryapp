@@ -4,6 +4,7 @@
 
     export let row;
     export let onInStockToggle;
+    export let col;
 </script>
 
 <div class="item-actions-container">

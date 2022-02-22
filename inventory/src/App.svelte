@@ -1,14 +1,15 @@
 <script>
+  import { Router, Link, Route } from "svelte-navigator";
+  import Home from './routes/Home.svelte';
+  import Manage from './routes/Manage.svelte';
   import logo from './assets/labben.png';
-  import InventoryList from './lib/InventoryList.svelte';
   import Fa from 'svelte-fa';
   import { faPlus } from '@fortawesome/free-solid-svg-icons';
-  import AddItem from './lib/AddItem.svelte';
 
-  let showAddItem = false;
+  import { showAddItem } from './store.js';
 
   function toggleShowAddItem(){
-    showAddItem = !showAddItem;
+    showAddItem.update(showAddItem => !showAddItem);
   }
 
 </script>
@@ -22,11 +23,15 @@
 </header>
 
 <main>
-  {#if showAddItem}
-    <AddItem/>
-  {/if}
+  <Router>
+    <Route path="/">
+      <Home/>
+    </Route>
 
-  <InventoryList/>
+    <Route path="/manage">
+      <Manage/>
+    </Route>
+  </Router>
 </main>
 
 <style>
