@@ -14,10 +14,8 @@
 <style>
     @media only screen and (min-width: 768px) {
         .item-actions-container {
-            display: grid;
-            grid-template-columns: 35px 35px;
-            width: 16px;
-            column-gap: 9px;
+            display: flex;
+            justify-content: center;
         }
     }
 </style>
