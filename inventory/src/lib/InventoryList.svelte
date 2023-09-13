@@ -46,6 +46,12 @@
             sortable: false,
         },
         {
+            key: "owner",
+            title: "Owner",
+            value: (v) => v.owner,
+            sortable: true,
+        },
+        {
             key: "location",
             title: "Location",
             value: (v) =>

@@ -26,6 +26,9 @@
         <div class="form-group description">
             <input type="text" name="description" placeholder="Description" />
         </div>
+        <div class="form-group">
+            <input type="text" name="owner" placeholder="Owner" />
+        </div>
         <div class="form-group location">
             <input type="number" name="location" placeholder="Location" />
         </div>
@@ -69,11 +72,11 @@
 
     @media only screen and (min-width: 768px) {
         .form-container {
-            width: 500px;
+            width: 660px;
         }
         form {
             display: grid;
-            grid-template-columns: 180px 250px 80px 50px;
+            grid-template-columns: 180px 250px 100px 80px 50px;
             column-gap: 10px;
         }
         .form-group input {

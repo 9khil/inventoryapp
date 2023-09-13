@@ -24,7 +24,8 @@ const inventorySchema = new Schema({
     name: String,
     description: String,
     inStock: Boolean,
-    location: Number
+    location: Number,
+    owner: String
 });
 const Item = mongoose.model('Item', inventorySchema);
 
